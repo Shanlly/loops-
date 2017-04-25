@@ -6,20 +6,30 @@
 	</head>
 <body>
 	<script type="text/javascript">
-var tempNum = Math.floor(Math.random()*101);
+var tempNum = 1;
+var tempNum2 =100;
 var answer = "";
-alert("Think of a number between 0-101!\n When you are ready click OK and \n LET THE GAME BEGIN!");
-for(var i= 0;i<100;i++){
-  answer= prompt("Is " +tempNum +" your number?\n Y for yes, L for to low, H for to high");
-  if(answer==="L"){
-    tempNum = tempNum + (Math.floor(Math.random()*15));
-  }else if(answer === "H"){
-     tempNum = tempNum-(Math.floor(Math.random()*15));
-   }else {
-     alert("Yeah!!");
-     break;
-   }
-}
+  alert("Think of a number between 1-100!\n When you are ready click OK and \n LET THE GAME BEGIN!");
+  
+   do{
+    var computer= Math.floor(Math.random()*(tempNum2-tempNum +1))+ tempNum;
+   answer= prompt("Is " + computer +" your number?\n Y for yes, L for to low, H for to high");
+// if answer is too low 
+   if(answer==="L"|| answer==="l"){
+    tempNum = computer;
+    console.log(tempNum);
+// if answer is too high
+   }else if(answer === "H" || answer==="h"){
+      tempNum2 = computer;
+      console.log(tempNum2);
+// is the computer is correct 
+    }else if (answer === "Y"|| answer ==="y"){
+        alert("Yeah!!");
+        break;
+// to end game
+     }else 
+     alert("Bye, Bye for now!");
+}while (answer !== "Y");  
 	</script>
 </body>
 </html>
