@@ -9,15 +9,20 @@
 	//Chess board
 		var size = 8;
 var board = "";
-
+//making a board of spaces and hashes 8 x 8 
+// creates the row
 for(var row= 0; row< size; row++){
+// creates the column
   for(var column= 0;column < size;column ++){
     if((row + column )% 2 === 0){
+// creates the spaces
       board += " ";
     }else {
+// creates the hashes
     board += "#";
     }
   }
+// starts a new line
   board += "\n";
 }
 console.log(board);
